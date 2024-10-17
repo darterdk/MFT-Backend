@@ -8,10 +8,9 @@ public class StockPriceGenerator : IHostedService, IDisposable
     private readonly IHubContext<StockPriceHub> _hubContext;
     private readonly Random _random = new ();
 
-    public StockPriceGenerator(IHubContext<StockPriceHub> hubContext, Timer timer)
+    public StockPriceGenerator(IHubContext<StockPriceHub> hubContext)
     {
         _hubContext = hubContext;
-        _timer = timer;
     }
 
     public Task StartAsync(CancellationToken cancellationToken)
